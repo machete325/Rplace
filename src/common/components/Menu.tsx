@@ -17,12 +17,17 @@ const useStyles = makeStyles()(() => ({
     menuItem: {
         display: 'flex',
         justifyContent: 'center',
+        color:'white',
+    },
+
+    menuItemActive:{
+        color:'black',
     },
 }));
 
 const menuConfig = [
     { id: 1, imageSrc: '', url: '/home' },
-    { id: 2, imageSrc: '', url: '/home' },
+    { id: 2, imageSrc: '', url: '/rplace' },
     { id: 3, imageSrc: '', url: '/mobile' },
     { id: 4, imageSrc: '', url: '/charts' },
     { id: 5, imageSrc: '', url: '/wifi' },
@@ -39,7 +44,7 @@ export const Menu = () => {
                 <Box key={id}>
                     <NavLink
                         to={url}
-                        className={classes.menuItem}
+                        className={({ isActive }) => `${isActive && classes.menuItemActive} ${classes.menuItem}`}
                     >
                         {/* <img src={imageSrc}/> */}
                         <AddHomeIcon/>
