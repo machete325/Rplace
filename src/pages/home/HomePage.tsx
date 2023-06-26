@@ -93,7 +93,7 @@ export const HomePage = () => {
                     <Box className={classes.mainContainer}>
                         <Box className={classes.videoContainer}>
                             <img
-                                src="https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/norfolk/places/blickling-estate/library/spring/1586918-early-morning-in-the-great-wood-at-blickling-estate-norfolk.jpg"
+                                src="/images/video.png"
                                 alt='live-video'
                                 className={classes.video}
                             />
