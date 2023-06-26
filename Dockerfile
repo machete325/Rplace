@@ -1,8 +1,6 @@
 # Base image
 FROM node:18 as build-stage
 
-ENV NODE_OPTIONS="--max-old-space-size=2048"
-
 # Set working directory
 WORKDIR /app
 

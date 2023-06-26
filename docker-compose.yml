@@ -6,7 +6,3 @@ services:
       dockerfile: Dockerfile
     ports:
       - '80:80'
-    deploy:
-      resources:
-        limits:
-          memory: 2g
