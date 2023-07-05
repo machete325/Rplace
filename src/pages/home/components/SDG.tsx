@@ -99,7 +99,7 @@ export const SDG = ({ value }:Props) => {
                     alt=''
                 />
 
-                <StyledSwitch checked={value}/>
+                <StyledSwitch defaultChecked={value}/>
             </Box>
         </CardIndicator>
     );
