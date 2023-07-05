@@ -24,8 +24,6 @@ export const Root = () => {
     const navigate = useNavigate();
     const { pathname } = useLocation();
 
-    console.log(location);
-
     useEffect(() => {
         if (pathname === '/') {
             navigate('/home');

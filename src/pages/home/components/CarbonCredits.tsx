@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { CardIndicator } from './CardIndicator';
 import { makeStyles } from 'tss-react/mui';
+import { formatNumberWithCommas } from '../../../utils/formatNumber';
 
 const useStyles = makeStyles()(() => ({
     container: {
@@ -12,7 +13,12 @@ const useStyles = makeStyles()(() => ({
     },
 }));
 
-export const CarbonCredits = () => {
+interface Props {
+    weight:number;
+    price:number;
+}
+
+export const CarbonCredits = ({ weight, price }:Props) => {
     const { classes } = useStyles();
 
     return (
@@ -27,7 +33,7 @@ export const CarbonCredits = () => {
                         variant='h3'
                         sx={{ fontWeight:400 }}
                     >
-                    6642
+                        {weight}
                     </Typography>
 
                     <Typography
@@ -42,7 +48,7 @@ export const CarbonCredits = () => {
                     variant='h2'
                     sx={{ fontSize:'17.5px' }}
                 >
-                    182,000
+                    {formatNumberWithCommas(price)}
                 </Typography>
             </Box>
         </CardIndicator>

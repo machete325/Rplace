@@ -1,0 +1,100 @@
+{
+  "title": "Sharon >> Nablus",
+  "home": {
+    "chart": {
+      "title": "analysis & statistics",
+      "data": {
+        "xAxis": {
+          "type": "category",
+          "boundaryGap": false,
+          "data": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        "series": [
+          {
+            "name": "COD levels",
+            "type": "line",
+            "data": [
+              1700,
+              1750,
+              1900,
+              1900,
+              2100,
+              2000,
+              1900
+            ]
+          },
+          {
+            "name": "TSS levels",
+            "type": "line",
+            "data": [
+              1200,
+              1240,
+              1400,
+              1350,
+              1500,
+              1800,
+              1620
+            ]
+          },
+          {
+            "name": "Forecast",
+            "type": "line",
+            "data": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1900,
+              2100,
+              2050,
+              1950,
+              1900
+            ]
+          },
+          {
+            "name": "COD Output",
+            "type": "line",
+            "data": [
+              125,
+              150,
+              140,
+              220,
+              340,
+              230,
+              200
+            ]
+          }
+        ]
+      }
+    },
+    "GHG_reduction": {
+      "value": 72
+    },
+    "cardbonCredits": {
+      "weight": 6642,
+      "price": 182000
+    },
+    "waterQualityGauge": {
+      "ph": 7.2,
+      "height": 40,
+      "gauge": 70
+    },
+    "SDG": true
+  }
+}

@@ -13,8 +13,21 @@ import {
 } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
+interface Series {
+    name: string;
+    type: string;
+    data: number[];
+}
+
 type Props = {
-    data: any;
+    data: {
+        xAxis: {
+            type: any;
+            boundaryGap: boolean;
+            data: number[];
+        };
+        series: Series[];
+    };
 };
 
 const useStyles = makeStyles()(() => ({
@@ -52,44 +65,20 @@ export const StatisticsChart = ({ data }: Props) => {
             bottom: '3%',
             containLabel: true,
         },
-        xAxis: {
-            type: 'category',
-            boundaryGap: false,
-            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-        },
+        xAxis: {},
         yAxis: {
             type: 'value',
         },
-        series: [
-            {
-                name: 'COD levels',
-                type: 'line',
-                data: [1700, 1750, 1900, 1900, 2100, 2000, 1900],
-            },
-            {
-                name: 'TSS levels',
-                type: 'line',
-                data: [1200, 1240, 1400, 1350, 1500, 1800, 1620],
-            },
-            {
-                name: 'Forecast',
-                type: 'line',
-                data: [0, 0, 0, 0, 0, 0, 0, 1900, 2100, 2050, 1950, 1900],
-            },
-            {
-                name: 'COD Output',
-                type: 'line',
-                data: [125, 150, 140, 220, 340, 230, 200],
-            },
-        ],
+        series: [],
     };
 
-    // const initChart = () => {
-    //     option.series[0] = { ...option.series[0], data: [{ value: percentage }] };
-    // };
+    const initChart = () => {
+        option.series = data.series;
+        option.xAxis = data.xAxis;
+    };
 
     useEffect(() => {
-    // initChart();
+        initChart();
 
         window.addEventListener('resize', () => {
             chart?.resize();
@@ -105,20 +94,18 @@ export const StatisticsChart = ({ data }: Props) => {
     }, []);
 
     return (
-        <Paper
-            elevation={0}
-            style={{ padding: '35px 35px 45px 25px', borderRadius:'16px' }}
+        <Paper elevation={0}
+            style={{ padding: '35px 35px 45px 25px', borderRadius: '16px' }}
         >
-            <Box sx={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-                <Typography
-                    sx={{ marginLeft:'10px' }}
-                    variant='h2'
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Typography sx={{ marginLeft: '10px' }}
+                    variant="h2"
                 >
                     {'analysis & statistics'}
                 </Typography>
 
                 <IconButton>
-                    <MoreHorizIcon sx={{ color:'#fff' }}/>
+                    <MoreHorizIcon sx={{ color: '#fff' }}/>
                 </IconButton>
             </Box>
             <Box ref={chartRef}

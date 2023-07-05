@@ -70,7 +70,11 @@ const StyledSwitch = styled((props: SwitchProps) => (
     },
 }));
 
-export const SDG = () => {
+interface Props {
+    value:boolean;
+}
+
+export const SDG = ({ value }:Props) => {
     const { classes } = useStyles();
 
     return (
@@ -95,7 +99,7 @@ export const SDG = () => {
                     alt=''
                 />
 
-                <StyledSwitch/>
+                <StyledSwitch checked={value}/>
             </Box>
         </CardIndicator>
     );

@@ -21,6 +21,30 @@ const router = createBrowserRouter([
                 path: '/home',
                 element: <HomePage/>,
             },
+            {
+                path: '/rplace',
+                element: <div>rplace</div>,
+            },
+            {
+                path: '/mobile',
+                element: <div>mobile</div>,
+            },
+            {
+                path: '/charts',
+                element: <div>charts</div>,
+            },
+            {
+                path: '/wifi',
+                element: <div>wifi</div>,
+            },
+            {
+                path: '/bluetooth',
+                element: <div>bluetooth</div>,
+            },
+            {
+                path: '/settings',
+                element: <div>settings</div>,
+            },
         ],
     },
 ]);
